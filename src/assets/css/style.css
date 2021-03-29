@@ -1,0 +1,484 @@
+:root {
+    --primary-color: #f7941d;
+    --text-color: #d8d8d8;
+    --background-hover: rgba(40, 40, 40, .8);
+    --background-table: rgba(30, 30, 30, .85);
+    --background-color-primary: rgba(60, 60, 60, .95);
+    --background-color-hue: #5b5b5b;
+    --color-yellow: #ffd900;
+    --color-green: #0f0;
+    --color-ceil: #ff25ff;
+    --color-floor: #1eeeee;
+    --color-white: #fff;
+    --color-discount: #ff3737;
+    --color-highlight: #373737;
+}
+
+html, body {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+.img-responsive {
+    width: 100%;
+    height: auto;
+}
+
+.fullheight {
+    height: 100vh;
+}
+
+.align-item-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.justify-content-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.justify-content-around {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.bg-img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-img-fixed {
+    background-attachment: fixed;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header.topbar {
+    background: var(--background-color-primary);
+    box-sizing: border-box;
+    line-height: 20px;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    min-width: 800px;
+}
+
+.topbar__left, .topbar__right {
+    flex-basis: 25%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.topbar__logo {
+    background-color: inherit;
+    border: none;
+    padding: 0;
+    transition: all .3s;
+}
+
+.topbar__link-logo {
+    display: block;
+    height: 22px;
+    overflow: hidden;
+    width: 110px;
+}
+
+.topbar__link-logo img {
+    width: 100%;
+    height: auto;
+}
+
+.topbar__search {
+    display: flex;
+}
+
+.search__input {
+    padding: 5px;
+    outline: none;
+    border-radius: 5px;
+    width: 120px;
+    font-size: 13px;
+}
+
+.search__icon {
+    background: var(--background-color-hue);
+    color: var(--primary-color);
+    height: 25px;
+    width: 30px;
+    /* position: absolute;
+    right: -33px;
+    top: 0; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 0 3px 3px 0;
+}
+
+.topbar__vnds-clock {
+    color: var(--primary-color);
+}
+
+.topbar__vnds-digital-lock {
+    margin: 0 10px;
+}
+
+.topbar__language-dropdown {
+    margin: 0 8px;
+    position: relative;
+    text-align: left;
+    display: inline;
+}
+
+.language-dropdown-btn {
+    box-sizing: border-box;
+    font-size: 1.05em;
+    position: relative;
+}
+
+.language-dropdown-list {
+    padding: 10px;
+}
+
+.language-dropdown-btn>ul {
+    background: var( --color-highlight);
+    list-style: none;
+    position: absolute;
+    width: 130px;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: none;
+    border-top: 2px solid var(--primary-color);
+    border-radius: 6px;
+    transition: all ease-in-out 0.5s;
+}
+
+.language-dropdown-btn>img, .topbar__account>img {
+    border-radius: 50%;
+}
+
+.language-dropdown-btn>ul>li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px 0;
+    cursor: pointer;
+    padding: 2px 5px;
+    font-size: 12px;
+}
+
+.language-dropdown-btn>ul>li>img {
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.language-dropdown-btn:hover>ul, .topbar__account:hover>ul {
+    display: block;
+}
+
+.language-dropdown-btn>ul>li:hover, .topbar__account>ul>li>a:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.topbar__feedback {
+    color: var(--text-color);
+    background-color: var(--background-color-hue);
+    border-radius: 3px;
+    display: inline-block;
+    line-height: 20px;
+    height: 20px;
+    margin-left: 8px;
+    padding: 0 10px;
+    transition: all .15s;
+}
+
+.topbar__feedback:hover {
+    background: inherit;
+    color: var(--color-white);
+}
+
+.topbar__account {
+    margin-left: 20px;
+}
+
+.topbar__account>ul {
+    background: var( --color-highlight);
+    list-style: none;
+    position: absolute;
+    width: 150px;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    right: 50px;
+    display: none;
+    border-top: 2px solid var(--primary-color);
+    border-radius: 6px;
+    transition: all ease-in-out 0.5s;
+}
+
+.topbar__account>ul>li a {
+    color: #ccc;
+    position: relative;
+}
+
+.topbar__account>ul>li {
+    padding: 5px 10px;
+}
+
+/*=========================================================== Table content ==========================================================*/
+
+.stock-table {
+    padding-top: 90px;
+}
+
+.sticky-table-header-wrapper {
+    position: fixed;
+    top: 90px;
+    width: 100%;
+    z-index: 36;
+}
+
+table.table-price {
+    border-collapse: collapse;
+    font-size: 12px;
+    font-family: helvetica, arial, sans-serif;
+    table-layout: fixed;
+    width: 100%;
+}
+
+table.table-price>thead {
+    color: var(--color-white);
+}
+
+.sticky-table-header-wrapper table.table-price {
+    background: var(--background-table);
+    box-shadow: 0 4px 10px rgb(0 0 0 / 40%);
+    overflow: visible;
+    width: 100%;
+}
+
+table.table-price tr td, table.table-price tr th {
+    border: 1px solid #343434;
+    user-select: none;
+}
+
+table.table-price>thead>tr th {
+    border-width: 1px;
+    font-weight: 400;
+    height: 28px;
+    line-height: 28px;
+    overflow: hidden;
+    padding: 0 3px;
+    white-space: nowrap;
+}
+
+table.table-price tbody tr td {
+    border-width: 0 1px;
+    font-family: tahoma, helvetica, arial, sans-serif;
+    height: 26px;
+    line-height: 26px;
+    padding: 0;
+    text-align: right;
+}
+
+table.table-price>thead>tr>th.sortable:hover {
+    background-color: #222;
+}
+
+table.table-price.table-price-full, table.table-price.fixed-header {
+    min-width: 992px;
+}
+
+table.table-price>thead>tr th.sortable {
+    cursor: n-resize;
+    cursor: url(data:image/gif;base64,R0lGODlhCQALAIABAOiKK////yH5BAEAAAEALAAAAAAJAAsAAAIUjAOnwIrcDJxvQrfs1UnS3DlhUAAAOw==), auto;
+}
+
+/* ============================================ Bang Khop lenh =========================================================*/
+
+.table-price tbody tr:nth-child(odd) {
+    background-color: #181818;
+}
+
+.table-price tbody tr:nth-child(even) {
+    background-color: #000;
+}
+
+table.table-price tbody tr td.has-tooltip {
+    cursor: pointer;
+}
+
+[data-tooltip].has-tooltip {
+    position: relative;
+    cursor: pointer;
+}
+
+.txtl {
+    text-align: left!important;
+}
+
+.table-price tbody tr td.cell-highlight {
+    background-color: var( --color-highlight);
+}
+
+.has-symbol.company-tooltip[data-tooltip]:before {
+    position: absolute;
+    width: 300px;
+    left: 83px;
+    margin-right: 0;
+}
+
+.has-symbol.company-tooltip[data-tooltip]:after {
+    left: 18px;
+}
+
+@media (min-width: 1504px) {
+    table.table-price tbody tr td>a:first-child, table.table-price tbody tr td>span {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+}
+
+table.table-price tbody tr td>a:first-child, table.table-price tbody tr td>span {
+    padding: 1px 5px 1px 1px;
+}
+
+table.table-price tr .symbol {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12.5px;
+    font-weight: 700;
+    transition: color .15s;
+}
+
+.table-price tbody tr:nth-child(odd) td.cell-highlight {
+    background-color: var(--color-highlight);
+}
+
+[data-tooltip]:before {
+    position: absolute;
+    content: attr(data-tooltip);
+    width: 150px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    line-height: 1.2;
+    font-weight: 400;
+    z-index: 5;
+    padding: 7px;
+    color: var(--color-white);
+    text-align: center;
+    font-size: 110%;
+    transition: all ease-in 0.2s;
+}
+
+[data-tooltip]:last-child:before {
+    right: 100px;
+    width: 100px;
+}
+
+[data-tooltip]:after, [data-tooltip]:before {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+[data-tooltip]:hover::before, 
+[data-tooltip]:hover::after {
+    visibility: visible;
+    opacity: 1000;
+}
+
+table.table-price tr .symbol:hover {
+    color: var(--color-white);
+}
+
+.txt-standard, .txt-yellow {
+    color: var(--color-yellow);
+}
+
+.txt-lime {
+    color: var(--color-green);
+}
+
+.txt-floor {
+    color: var(--color-ceil);
+}
+
+.txt-floor, .txt-magenta {
+    color: var(--color-ceil);
+}
+
+.txt-gia-san {
+    color: var(--color-floor);
+}
+
+.txt-aqua, .txt-ceil {
+    color: var(--color-floor);
+}
+
+.txt-discount, .txt-red {
+    color: var(--color-discount);
+}
+
+.has-symbol.company-tooltip[data-tooltip]:after, 
+.tooltip-bottom[data-tooltip]:after {
+    bottom: -20%;
+    left: 50%;
+    margin-left: -5px;
+    border-top: 0;
+    border-bottom: 5px solid var(--primary-color);
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+}
+
+[data-tooltip]:after {
+    position: absolute;
+    content: " ";
+    font-size: 0;
+    line-height: 0;
+    width: 0;
+    z-index: 5;
+}
+
+.has-symbol {
+    padding: 1px 1px 1px 5px;
+}
+
+.has-symbol.company-tooltip[data-tooltip]:before, 
+.tooltip-bottom[data-tooltip]:before {
+    top: 120%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+.table-price tbody tr.selected, 
+.table-price tbody tr:not(.derivative-detail-row):hover {
+    background-color: #444;
+    transition-duration: .3s;
+}
+
+.table-price tbody tr.selected td.has-tooltip:hover, 
+.table-price tbody tr:hover td.has-tooltip:hover {
+    background-color: #555;
+}

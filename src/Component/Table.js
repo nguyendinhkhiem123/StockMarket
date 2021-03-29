@@ -9,17 +9,17 @@ class Table extends Component {
     
    componentDidMount(){
         this.props.getListAll();
-        var socket = new WebSocket("ws://localhost:8080");
+        /*var socket = new WebSocket("ws://localhost:8080");
         socket.onopen = ()=>{
             console.log("Kết nối");
-        }
+        }*/
     }
     render() {
         var {task} =  this.props;
         var element = task.map((value ,index) =>{
             return  <TableItem
-            macp ={value.macp}
-            giaTC ={value.giaTC}
+                macp ={value.macp}
+                giaTC ={value.giaTC}
             giaTran = {value.giaTran}
             giaSan = {value.giaSan}
             ktTong = {value.ktTong}
